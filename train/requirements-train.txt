@@ -1,0 +1,23 @@
+# Versions used for the released CtrlRegen weights (Stage B environment, verified end-to-end).
+# Stage A was originally trained with diffusers 0.22.1 / transformers 4.40.2 / torch 2.3.0;
+# it has been verified to produce byte-identical checkpoints under the versions below.
+#
+# HARDWARE NOTE: torch 2.4.0 ships kernels up to sm_90 (Hopper). It will NOT run on
+# Blackwell GPUs (B200 = sm_100, RTX PRO 6000 = sm_120). On those cards install a newer
+# torch/CUDA build; the training code itself is not version-sensitive beyond diffusers>=0.22.
+
+torch==2.4.0
+torchvision==0.19.0
+diffusers==0.30.2
+transformers==4.44.2
+accelerate==0.34.2
+datasets==2.21.0
+safetensors==0.4.5
+huggingface-hub==0.24.6
+numpy==1.24.3
+pillow==10.4.0
+einops==0.8.0
+wandb==0.17.8
+
+# optional, memory-efficient attention
+# xformers==0.0.27.post2
