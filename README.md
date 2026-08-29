@@ -41,7 +41,16 @@ Below are some examples. The left one represents the original image, while the r
 
 ## How to train
 
-Note: I am still working on this part.
+Training code is in [`train/`](train). CtrlRegen is trained in two stages:
+
+1. **Semantic Control** (`train_semantic.py`)
+2. **Spatial Control** (`train_spatial.py`)
+
+`convert_checkpoint.py` turns the resulting checkpoints into the exact weight format this repo's
+inference notebook loads.
+
+See [`train/README.md`](train/README.md) for setup, data format, hyperparameters and the
+configuration used for the released weights.
 
 ## Disclaimer
 This project aims to enhance the robustness of image watermarks. Users are free to leverage this tool to strengthen their watermarking algorithms; however, they must **adhere to local regulations and use it responsibly**. The developers disclaim any liability for potential misuse by users.
